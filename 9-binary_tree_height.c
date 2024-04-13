@@ -21,8 +21,16 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (tree->right)
 		height_r = 1 + binary_tree_height(tree->right);
 
+printf("height (%d) left is  %lu\n", tree->n, height_l);
+printf("height (%d) right is %lu\n", tree->n, height_r);
 	if (height_l > height_r)
+	{
+		printf("returning left\n");
 		return (height_l);
+	}
 	else
+	{
+		printf("returning right\n");
 		return (height_r);
+	}
 }
