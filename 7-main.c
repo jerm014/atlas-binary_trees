@@ -1,5 +1,7 @@
 #include "binary_trees.h"
+#include "binary_tree_print.c"
 #include "7-binary_tree_inorder.c"
+#include "0-binary_tree_node.c"
 
 /**
  * print_num - Prints a number
