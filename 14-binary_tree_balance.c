@@ -5,7 +5,7 @@
 /**
  * binary_tree_balance-      measures the balance factor of a binary tree
  * @tree:                    pointer to the root node of the tree to measure
-                             the balance factor
+ *                           the balance factor
  * Return:                   balance factor of tree
  *                           * if tree is NULL, the function will return 0
  *
