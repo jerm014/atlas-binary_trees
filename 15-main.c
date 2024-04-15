@@ -1,5 +1,9 @@
 #include "binary_trees.h"
 #include "15-binary_tree_is_full.c"
+#include "print_tree.c"
+#include "0-binary_tree_node.c"
+#include "1-binary_tree_insert_left.c"
+#include "2-binary_tree_insert_right.c"
 
 /**
  * main - Entry point
