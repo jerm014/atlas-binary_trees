@@ -1,4 +1,6 @@
 #include "binary_trees.h"
+#include "11-binary_tree_size.c"
+#include "9-binary_tree_height.c"
 
 /**
  * binary_tree_is_perfect-   checks if a binary tree is perfect
@@ -9,24 +11,24 @@
 */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int l = 0, r = 0;
+	size_t height, size;
 
 	if (!tree)
 		return (0);
 
-	if (tree->left == NULL && tree->right == NULL)
-		return (1);
+	height = binary_tree_height(tree) + 1; /* height doesn't count root! */
+	size = binary_tree_size(tree) + 1; /* 2 ^ actual height - 1 = size */
 
-	if (tree->left == NULL && tree->right != NULL)
-		return (0);
+	/*
+	* 1,1 2,3 3,7 4,15 5,31 6,63
+	* h1=s1:  2^1 = 2, 2-1 = 1
+	* h2=s3:  2^2 = 4, 4-1 = 3
+	* h3=s7:  2^3 = 8, 8-1 = 7
+	* h4=s15: 2^4 = 16, 16-1 = 15
+	* h5=s31: 2^5 = 32, 32-1 = 31
+	* h6=s63: 2^6 = 64, 64-1 = 63
+	*/
 
-	if (tree->left != NULL && tree->right == NULL)
-		return (0);
+	return ((1 << height) == size);
 
-	l = binary_tree_is_perfect(tree->left);
-	r = binary_tree_is_perfect(tree->right);
-	if (l && r)
-		return (1);
-
-	return (0);
 }
