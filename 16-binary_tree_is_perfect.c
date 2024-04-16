@@ -29,6 +29,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	* h6=s63: 2^6 = 64, 64-1 = 63
 	*/
 
-	return ((1 << height) == size);
+	return ((1 << height) == (int)size);
 
 }
